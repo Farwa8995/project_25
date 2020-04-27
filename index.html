@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ludo.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Ludo Arise</h1>
+        <div class="dice">
+            <p>Player 1</p>
+            <img src="dice1.png" alt="" id="one">
+        </div>
+        <div class="dice">
+            <p>Player 2</p>
+            <img src="dice2.png" alt="" id="two">
+        </div>
+     
+    </div>
+    <button onclick="abc()">CLICK ME</button>
+   <script> 
+   function abc(){
+    var x=Math.floor(Math.random()*6)+1;
+    var img='dice'+x+".png";
+    document.getElementById('one').setAttribute('src',img);
+
+
+    var y=Math.floor(Math.random()*6)+1;
+    var img2='dice'+y+".png";
+    document.getElementById('two').setAttribute('src',img2);
+   
+   if (img>img2){
+       document.querySelector('h1').innerHTML="Player1 won"
+   }
+  else if (img2>img){
+    document.querySelector('h1').innerHTML="Player2 won"
+
+   }
+   else{
+    document.querySelector('h1').innerHTML="Draw";
+
+   }
+
+   }
+
+   </script>
+</body>
+</html>
